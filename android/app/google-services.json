@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "490044850325",
+    "project_id": "ghaselni",
+    "storage_bucket": "ghaselni.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:490044850325:android:0ebef4c1f9f0416db19b9c",
+        "android_client_info": {
+          "package_name": "com.smadi.Ghaselni"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPkKSN9y2Ey7BfS91rnHZbH_TlDqCOaHc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
