@@ -1,3 +1,17 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // Android Gradle Plugin
+        classpath "com.android.tools.build:gradle:8.6.1"
+
+        // ✅ Google Services plugin (مهم لفirebase)
+        classpath "com.google.gms:google-services:4.4.2"
+    }
+}
+
 allprojects {
     repositories {
         google()
@@ -22,27 +36,29 @@ subprojects {
 subprojects {
     afterEvaluate { project ->
         if (project.plugins.hasPlugin("com.android.application") ||
-                project.plugins.hasPlugin("com.android.library")) {
+            project.plugins.hasPlugin("com.android.library")) {
             project.android {
                 compileSdkVersion 35
             }
         }
         if (project.hasProperty('android')) {
-                project.android {
-                    if (namespace == null) {
-                        namespace project.group
-                    }
+            project.android {
+                if (namespace == null) {
+                    namespace project.group
                 }
             }
+        }
     }
 }
+
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
 }
+
 subprojects {
     project.evaluationDependsOn(':app')
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
+tasks.register("clean", Delete) {
+    delete rootProject.layout.buildDirectory
 }
